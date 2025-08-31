@@ -406,7 +406,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000200  s__CODE                         
      00000EB9  l__CODE                         
      000010B9  s__HOME                         
-     00001645  l__CODE_4                       
+     00001689  l__CODE_4                       
      00001971  l__DATA                         
      00002000  _rROMB0                            
      00002D53  l__HOME                         
@@ -1293,7 +1293,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
+_CODE_4                             00044000    00001689 =        5769. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1352,7 +1352,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
+_CODE_4                             00044000    00001689 =        5769. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1367,117 +1367,124 @@ _CODE_4                             00044000    00001645 =        5701. bytes (R
      00044CBE  _scene_8_actors                    scene_8_actors
      00044D8E  _scene_8_init                      scene_8_init
      00044D91  GBVM$scene_8_init$a4526d47_877a_   scene_8_init
-     00044DA1  GBVM$scene_8_init$9e824bbd_1ee5_   scene_8_init
-     00044DAB  GBVM$scene_8_init$624bad5b_a946_   scene_8_init
-     00044DB0  GBVM$scene_8_init$autofade$30555   scene_8_init
-     00044DBB  GBVM$scene_8_init$3bae2f81_2282_   scene_8_init
-     00044DBB  GBVM$scene_8_init$d2ef63e4_643c_   scene_8_init
-     00044DCC  GBVM$scene_8_init$f97fa634_75c8_   scene_8_init
-     00044DCD  GBVM$scene_8_init$dc44d986_01fb_   scene_8_init
-     00044E20  GBVM$scene_8_init$aff2804f_f79a_   scene_8_init
-     00044E43  GBVM$scene_8_init$c17ced88_fd72_   scene_8_init
-     00044E43  GBVM_END$scene_8_init$3bae2f81_2   scene_8_init
-     00044E43  GBVM_END$scene_8_init$d2ef63e4_6   scene_8_init
-     00044E4A  GBVM$scene_8_init$cb114b7f_489f_   scene_8_init
-     00044E56  GBVM$scene_8_init$467f96da_c7fc_   scene_8_init
-     00044E5E  GBVM$scene_8_init$a1b0a3a2_8f22_   scene_8_init
-     00044E6F  GBVM$scene_8_init$120d809e_70d2_   scene_8_init
-     00044E77  GBVM$scene_8_init$d2b639b4_3abe_   scene_8_init
-     00044E83  GBVM$scene_8_init$5addc443_1b07_   scene_8_init
-     00044E8B  GBVM$scene_8_init$0742cd3f_c95a_   scene_8_init
-     00044E8F  GBVM$scene_8_init$c31d5c43_fd86_   scene_8_init
-     00044E9B  GBVM$scene_8_init$7e8f36a6_8ab6_   scene_8_init
-     00044EA4  GBVM$scene_8_init$989dc5f6_7f8f_   scene_8_init
-     00044EA4  GBVM$scene_8_init$eb45287d_9809_   scene_8_init
-     00044EE6  GBVM$scene_8_init$c072d176_874f_   scene_8_init
-     00044EF2  GBVM$scene_8_init$fd477c00_f456_   scene_8_init
-     00044F34  GBVM$scene_8_init$2e1ef3df_0866_   scene_8_init
-     00044F40  GBVM$scene_8_init$152ec3e9_e087_   scene_8_init
-     00044F82  GBVM_END$scene_8_init$eb45287d_9   scene_8_init
-     00044F83  _scene_8_p_hit1                    scene_8_p_hit1
-     00044F96  GBVM$scene_8_p_hit1$1b650622_b09   scene_8_p_hit1
-     00044FE9  GBVM$scene_8_p_hit1$d3ab1037_9ef   scene_8_p_hit1
-     00044FF2  ___func_scene_8_sprites            scene_8_sprites
-     00044FF2  _scene_8_sprites                   scene_8_sprites
-     00044FFE  ___func_scene_8                    scene_8
-     00044FFE  _scene_8                           scene_8
-     00045039  _script_engine_init                
-     0004504D  ___func_sprite_actor_animated_ba   sprite_actor_animated_bank2_
-     0004504D  _sprite_actor_animated_bank2_til   sprite_actor_animated_bank2_
-     000450EF  ___func_sprite_actor_animated_ti   sprite_actor_animated_tilese
-     000450EF  _sprite_actor_animated_tileset     sprite_actor_animated_tilese
-     00045191  ___func_sprite_actor_animated      sprite_actor_animated
+     00044DAC  GBVM$scene_8_init$9e824bbd_1ee5_   scene_8_init
+     00044DB6  GBVM$scene_8_init$624bad5b_a946_   scene_8_init
+     00044DBB  GBVM$scene_8_init$autofade$30555   scene_8_init
+     00044DC6  GBVM$scene_8_init$3bae2f81_2282_   scene_8_init
+     00044DC6  GBVM$scene_8_init$d2ef63e4_643c_   scene_8_init
+     00044DD7  GBVM$scene_8_init$f97fa634_75c8_   scene_8_init
+     00044DD8  GBVM$scene_8_init$dc44d986_01fb_   scene_8_init
+     00044E2B  GBVM$scene_8_init$aff2804f_f79a_   scene_8_init
+     00044E4E  GBVM$scene_8_init$c17ced88_fd72_   scene_8_init
+     00044E4E  GBVM_END$scene_8_init$3bae2f81_2   scene_8_init
+     00044E4E  GBVM_END$scene_8_init$d2ef63e4_6   scene_8_init
+     00044E55  GBVM$scene_8_init$cb114b7f_489f_   scene_8_init
+     00044E61  GBVM$scene_8_init$467f96da_c7fc_   scene_8_init
+     00044E69  GBVM$scene_8_init$a1b0a3a2_8f22_   scene_8_init
+     00044E7A  GBVM$scene_8_init$120d809e_70d2_   scene_8_init
+     00044E82  GBVM$scene_8_init$d2b639b4_3abe_   scene_8_init
+     00044E8E  GBVM$scene_8_init$5addc443_1b07_   scene_8_init
+     00044E96  GBVM$scene_8_init$0742cd3f_c95a_   scene_8_init
+     00044E9A  GBVM$scene_8_init$56c02196_5fc6_   scene_8_init
+     00044E9A  GBVM$scene_8_init$ae465522_249a_   scene_8_init
+     00044EA5  GBVM$scene_8_init$ca6b6157_a86d_   scene_8_init
+     00044EB1  GBVM$scene_8_init$2068bb09_fd91_   scene_8_init
+     00044EBC  GBVM$scene_8_init$cdb27cec_9540_   scene_8_init
+     00044EC8  GBVM$scene_8_init$14899aa9_09dc_   scene_8_init
+     00044ED3  GBVM$scene_8_init$c31d5c43_fd86_   scene_8_init
+     00044ED3  GBVM_END$scene_8_init$ae465522_2   scene_8_init
+     00044EDF  GBVM$scene_8_init$7e8f36a6_8ab6_   scene_8_init
+     00044EE8  GBVM$scene_8_init$989dc5f6_7f8f_   scene_8_init
+     00044EE8  GBVM$scene_8_init$eb45287d_9809_   scene_8_init
+     00044F2A  GBVM$scene_8_init$c072d176_874f_   scene_8_init
+     00044F36  GBVM$scene_8_init$fd477c00_f456_   scene_8_init
+     00044F78  GBVM$scene_8_init$2e1ef3df_0866_   scene_8_init
+     00044F84  GBVM$scene_8_init$152ec3e9_e087_   scene_8_init
+     00044FC6  GBVM_END$scene_8_init$eb45287d_9   scene_8_init
+     00044FC7  _scene_8_p_hit1                    scene_8_p_hit1
+     00044FDA  GBVM$scene_8_p_hit1$1b650622_b09   scene_8_p_hit1
+     0004502D  GBVM$scene_8_p_hit1$d3ab1037_9ef   scene_8_p_hit1
+     00045036  ___func_scene_8_sprites            scene_8_sprites
+     00045036  _scene_8_sprites                   scene_8_sprites
+     00045042  ___func_scene_8                    scene_8
 ASxxxx Linker V03.00/V05.40 + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
+_CODE_4                             00044000    00001689 =        5769. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00045191  _sprite_actor_animated_metasprit   sprite_actor_animated
-     0004519D  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451A9  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451B5  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451C1  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451CD  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451D9  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451E5  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000451F1  _sprite_actor_animated_metasprit   sprite_actor_animated
-     00045209  _sprite_actor_animated_animation   sprite_actor_animated
-     00045219  _sprite_actor_animated_animation   sprite_actor_animated
-     0004521B  _sprite_actor_animated             sprite_actor_animated
-     0004522E  ___func_sprite_konami_logo01_ban   sprite_konami_logo01_bank2_t
-     0004522E  _sprite_konami_logo01_bank2_tile   sprite_konami_logo01_bank2_t
-     00045290  ___func_sprite_konami_logo01_til   sprite_konami_logo01_tileset
-     00045290  _sprite_konami_logo01_tileset      sprite_konami_logo01_tileset
-     000452F2  ___func_sprite_konami_logo01       sprite_konami_logo01
-     000452F2  _sprite_konami_logo01_metasprite   sprite_konami_logo01
-     0004530E  _sprite_konami_logo01_metasprite   sprite_konami_logo01
-     00045310  _sprite_konami_logo01_animations   sprite_konami_logo01
-     00045320  _sprite_konami_logo01_animations   sprite_konami_logo01
-     00045322  _sprite_konami_logo01              sprite_konami_logo01
-     00045335  ___func_sprite_konami_logo02_ban   sprite_konami_logo02_bank2_t
-     00045335  _sprite_konami_logo02_bank2_tile   sprite_konami_logo02_bank2_t
-     00045397  ___func_sprite_konami_logo02_til   sprite_konami_logo02_tileset
-     00045397  _sprite_konami_logo02_tileset      sprite_konami_logo02_tileset
-     000453F9  ___func_sprite_konami_logo02       sprite_konami_logo02
-     000453F9  _sprite_konami_logo02_metasprite   sprite_konami_logo02
-     00045415  _sprite_konami_logo02_metasprite   sprite_konami_logo02
-     00045417  _sprite_konami_logo02_animations   sprite_konami_logo02
-     00045427  _sprite_konami_logo02_animations   sprite_konami_logo02
-     00045429  _sprite_konami_logo02              sprite_konami_logo02
-     0004543C  ___func_sprite_konami_spark_bank   sprite_konami_spark_bank2_ti
-     0004543C  _sprite_konami_spark_bank2_tiles   sprite_konami_spark_bank2_ti
-     0004549E  ___func_sprite_konami_spark_tile   sprite_konami_spark_tileset
-     0004549E  _sprite_konami_spark_tileset       sprite_konami_spark_tileset
-     00045500  ___func_sprite_konami_spark        sprite_konami_spark
-     00045500  _sprite_konami_spark_metasprite_   sprite_konami_spark
-     00045514  _sprite_konami_spark_metasprite_   sprite_konami_spark
-     00045528  _sprite_konami_spark_metasprite_   sprite_konami_spark
-     0004553C  _sprite_konami_spark_metasprites   sprite_konami_spark
-     00045542  _sprite_konami_spark_animations    sprite_konami_spark
-     00045552  _sprite_konami_spark_animations_   sprite_konami_spark
-     00045554  _sprite_konami_spark               sprite_konami_spark
-     00045567  ___func_sprite_konami_text_gradi   sprite_konami_text_gradient_
-     00045567  _sprite_konami_text_gradient_til   sprite_konami_text_gradient_
-     00045589  _spritesheet_none_metasprite       spritesheet_none
-     0004558D  _spritesheet_none_metasprites      spritesheet_none
-     0004558F  _spritesheet_none                  spritesheet_none
-     000455A2  ___func_tileset_default_frame      tileset_default_frame
-     000455A2  _tileset_default_frame             tileset_default_frame
+     00045042  _scene_8                           scene_8
+     0004507D  _script_engine_init                
+     00045091  ___func_sprite_actor_animated_ba   sprite_actor_animated_bank2_
+     00045091  _sprite_actor_animated_bank2_til   sprite_actor_animated_bank2_
+     00045133  ___func_sprite_actor_animated_ti   sprite_actor_animated_tilese
+     00045133  _sprite_actor_animated_tileset     sprite_actor_animated_tilese
+     000451D5  ___func_sprite_actor_animated      sprite_actor_animated
+     000451D5  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451E1  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451ED  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451F9  _sprite_actor_animated_metasprit   sprite_actor_animated
+     00045205  _sprite_actor_animated_metasprit   sprite_actor_animated
+     00045211  _sprite_actor_animated_metasprit   sprite_actor_animated
+     0004521D  _sprite_actor_animated_metasprit   sprite_actor_animated
+     00045229  _sprite_actor_animated_metasprit   sprite_actor_animated
+     00045235  _sprite_actor_animated_metasprit   sprite_actor_animated
+     0004524D  _sprite_actor_animated_animation   sprite_actor_animated
+     0004525D  _sprite_actor_animated_animation   sprite_actor_animated
+     0004525F  _sprite_actor_animated             sprite_actor_animated
+     00045272  ___func_sprite_konami_logo01_ban   sprite_konami_logo01_bank2_t
+     00045272  _sprite_konami_logo01_bank2_tile   sprite_konami_logo01_bank2_t
+     000452D4  ___func_sprite_konami_logo01_til   sprite_konami_logo01_tileset
+     000452D4  _sprite_konami_logo01_tileset      sprite_konami_logo01_tileset
+     00045336  ___func_sprite_konami_logo01       sprite_konami_logo01
+     00045336  _sprite_konami_logo01_metasprite   sprite_konami_logo01
+     00045352  _sprite_konami_logo01_metasprite   sprite_konami_logo01
+     00045354  _sprite_konami_logo01_animations   sprite_konami_logo01
+     00045364  _sprite_konami_logo01_animations   sprite_konami_logo01
+     00045366  _sprite_konami_logo01              sprite_konami_logo01
+     00045379  ___func_sprite_konami_logo02_ban   sprite_konami_logo02_bank2_t
+     00045379  _sprite_konami_logo02_bank2_tile   sprite_konami_logo02_bank2_t
+     000453DB  ___func_sprite_konami_logo02_til   sprite_konami_logo02_tileset
+     000453DB  _sprite_konami_logo02_tileset      sprite_konami_logo02_tileset
+     0004543D  ___func_sprite_konami_logo02       sprite_konami_logo02
+     0004543D  _sprite_konami_logo02_metasprite   sprite_konami_logo02
+     00045459  _sprite_konami_logo02_metasprite   sprite_konami_logo02
+     0004545B  _sprite_konami_logo02_animations   sprite_konami_logo02
+     0004546B  _sprite_konami_logo02_animations   sprite_konami_logo02
+     0004546D  _sprite_konami_logo02              sprite_konami_logo02
+     00045480  ___func_sprite_konami_spark_bank   sprite_konami_spark_bank2_ti
+     00045480  _sprite_konami_spark_bank2_tiles   sprite_konami_spark_bank2_ti
+     000454E2  ___func_sprite_konami_spark_tile   sprite_konami_spark_tileset
+     000454E2  _sprite_konami_spark_tileset       sprite_konami_spark_tileset
+     00045544  ___func_sprite_konami_spark        sprite_konami_spark
+     00045544  _sprite_konami_spark_metasprite_   sprite_konami_spark
+     00045558  _sprite_konami_spark_metasprite_   sprite_konami_spark
+     0004556C  _sprite_konami_spark_metasprite_   sprite_konami_spark
+     00045580  _sprite_konami_spark_metasprites   sprite_konami_spark
+     00045586  _sprite_konami_spark_animations    sprite_konami_spark
+     00045596  _sprite_konami_spark_animations_   sprite_konami_spark
+     00045598  _sprite_konami_spark               sprite_konami_spark
 ASxxxx Linker V03.00/V05.40 + sdld,  page 46.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
+_CODE_4                             00044000    00001689 =        5769. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00045634  _logo_init                         logo
-     00045644  _logo_update                       logo
+     000455AB  ___func_sprite_konami_text_gradi   sprite_konami_text_gradient_
+     000455AB  _sprite_konami_text_gradient_til   sprite_konami_text_gradient_
+     000455CD  _spritesheet_none_metasprite       spritesheet_none
+     000455D1  _spritesheet_none_metasprites      spritesheet_none
+     000455D3  _spritesheet_none                  spritesheet_none
+     000455E6  ___func_tileset_default_frame      tileset_default_frame
+     000455E6  _tileset_default_frame             tileset_default_frame
+     00045678  _logo_init                         logo
+     00045688  _logo_update                       logo
 
 ASxxxx Linker V03.00/V05.40 + sdld,  page 47.
 Hexadecimal  [32-Bits]
