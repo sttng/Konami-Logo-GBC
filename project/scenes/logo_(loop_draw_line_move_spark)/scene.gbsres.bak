@@ -7,7 +7,7 @@
   "symbol": "scene_8",
   "x": 136,
   "y": 272,
-  "width": 40,
+  "width": 36,
   "height": 20,
   "backgroundId": "9b12c384-e734-483c-8d90-86933682719f",
   "tilesetId": "",
@@ -57,7 +57,7 @@
     {
       "command": "EVENT_GROUP",
       "args": {
-        "__collapse": false,
+        "__collapse": true,
         "__comment": false,
         "__label": "DrawLineAcrossOverlayScreen+MoveSpark"
       },
@@ -154,7 +154,7 @@
       "command": "EVENT_ACTOR_DEACTIVATE",
       "args": {
         "actorId": "821a100f-f3cb-48b2-831c-940dbfb0e21c",
-        "__collapse": true
+        "__collapse": false
       },
       "id": "467f96da-c7fc-4e85-ad49-42ddc0361249"
     },
@@ -163,14 +163,14 @@
       "args": {
         "x": {
           "type": "number",
-          "value": 20
+          "value": 16
         },
         "y": {
           "type": "number",
           "value": 0
         },
         "speed": 0,
-        "__collapse": true
+        "__collapse": false
       },
       "id": "a1b0a3a2-8f22-476f-86d4-64a08b6ab69e"
     },

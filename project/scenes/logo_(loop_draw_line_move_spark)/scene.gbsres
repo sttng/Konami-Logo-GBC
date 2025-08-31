@@ -7,7 +7,7 @@
   "symbol": "scene_8",
   "x": 136,
   "y": 272,
-  "width": 40,
+  "width": 36,
   "height": 20,
   "backgroundId": "9b12c384-e734-483c-8d90-86933682719f",
   "tilesetId": "",
@@ -57,7 +57,7 @@
     {
       "command": "EVENT_GROUP",
       "args": {
-        "__collapse": false,
+        "__collapse": true,
         "__comment": false,
         "__label": "DrawLineAcrossOverlayScreen+MoveSpark"
       },
@@ -163,7 +163,7 @@
       "args": {
         "x": {
           "type": "number",
-          "value": 20
+          "value": 16
         },
         "y": {
           "type": "number",
@@ -229,14 +229,14 @@
       "command": "EVENT_GROUP",
       "args": {
         "__label": "Event Group: Fade Logo to White",
-        "__collapse": true
+        "__collapse": false
       },
       "children": {
         "true": [
           {
             "command": "EVENT_GBVM_SCRIPT",
             "args": {
-              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 0,0,0 0,0,0 0,0,0 32,32,32\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 32,32,32\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 32,32,32\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 32,32,32\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 32,32,32\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 32,32,32",
+              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 0,0,0 0,0,0 32,32,32\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 32,32,32\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 32,32,32\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 32,32,32\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 32,32,32\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 32,32,32",
               "__collapse": false,
               "__comment": false
             },
@@ -254,7 +254,7 @@
           {
             "command": "EVENT_GBVM_SCRIPT",
             "args": {
-              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 0,0,0 0,0,0 0,0,0 80,80,80\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 80,80,80\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 80,80,80\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 80,80,80\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 80,80,80\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 80,80,80",
+              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 0,0,0 0,0,0 80,80,80\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 80,80,80\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 80,80,80\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 80,80,80\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 80,80,80\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 80,80,80",
               "__collapse": false
             },
             "id": "fd477c00-f456-4f04-93a5-7b182be54cf7"
@@ -271,7 +271,7 @@
           {
             "command": "EVENT_GBVM_SCRIPT",
             "args": {
-              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n .CGB_PAL 0,0,0 0,0,0 0,0,0 255,255,255\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 255,255,255\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 255,255,255\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 255,255,255\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 255,255,255\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 255,255,255",
+              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n .CGB_PAL 31,31,1 0,0,0 0,0,0 255,255,255\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 255,255,255\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 255,255,255\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 255,255,255\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 255,255,255\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 255,255,255",
               "__collapse": false
             },
             "id": "152ec3e9-e087-490a-90e4-9fcb26d34e55"
