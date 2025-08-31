@@ -1,0 +1,319 @@
+{
+  "_resourceType": "scene",
+  "id": "30555443-3c92-4d41-bcab-258596bc2e5f",
+  "_index": 0,
+  "type": "TOPDOWN",
+  "name": "Logo (Loop Draw Line + Move Spark)",
+  "symbol": "scene_8",
+  "x": 136,
+  "y": 272,
+  "width": 40,
+  "height": 20,
+  "backgroundId": "9b12c384-e734-483c-8d90-86933682719f",
+  "tilesetId": "",
+  "paletteIds": [
+    "",
+    "",
+    "default-bg-3",
+    "dc87a9b8-d3b0-4650-8de0-b8868e0e6a5e",
+    "b882cfe5-4011-4b5e-baee-784c504637e5",
+    "36f13a3c-44ae-4c7d-976a-f6b57b6f03b0",
+    "502ce850-7c6e-48d8-9b3b-5695eb22b46a"
+  ],
+  "spritePaletteIds": [
+    "dc87a9b8-d3b0-4650-8de0-b8868e0e6a5e",
+    "502ce850-7c6e-48d8-9b3b-5695eb22b46a"
+  ],
+  "autoFadeSpeed": 1,
+  "autoFadeEventCollapse": true,
+  "script": [
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_SET_CONST_UINT8 _show_actors_on_overlay, 1\nVM_SET_CONST_UINT8 _overlay_priority, 0",
+        "__collapse": false,
+        "__comment": false
+      },
+      "id": "a4526d47-877a-4b7c-89a7-4e529d0bde2f"
+    },
+    {
+      "command": "EVENT_ACTOR_HIDE",
+      "args": {
+        "actorId": "player",
+        "__collapse": true
+      },
+      "id": "9e824bbd-1ee5-4ff2-9c7d-894a59e8d49d"
+    },
+    {
+      "command": "EVENT_OVERLAY_SHOW",
+      "args": {
+        "color": "black",
+        "x": 0,
+        "y": 1,
+        "__collapse": true
+      },
+      "id": "624bad5b-a946-4a27-8349-65d8e8400693"
+    },
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__collapse": false,
+        "__comment": false,
+        "__label": "DrawLineAcrossOverlayScreen+MoveSpark"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_LOOP_FOR",
+            "args": {
+              "variable": "0",
+              "from": {
+                "type": "number",
+                "value": 1
+              },
+              "comparison": "<=",
+              "to": {
+                "type": "number",
+                "value": 22
+              },
+              "operation": "+=",
+              "value": {
+                "type": "number",
+                "value": 1
+              },
+              "__collapse": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_WAIT",
+                  "args": {
+                    "time": 0.1,
+                    "frames": 1,
+                    "__collapse": false,
+                    "units": "frames"
+                  },
+                  "id": "f97fa634-75c8-47d3-a144-fbbc1d8eeda0"
+                },
+                {
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "821a100f-f3cb-48b2-831c-940dbfb0e21c",
+                    "x": {
+                      "type": "number",
+                      "value": 1
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "moveType": "horizontal",
+                    "useCollisions": false,
+                    "__collapse": false,
+                    "__comment": false
+                  },
+                  "id": "dc44d986-01fb-485c-801b-df1bd3864bd6"
+                },
+                {
+                  "command": "EVENT_GBVM_SCRIPT",
+                  "args": {
+                    "script": "VM_RPN\n  .R_INT8 0\n  .R_INT8 0\n  .R_REF VAR_V2\n  .R_INT8 1\n  .R_INT8 0\n  .R_INT8 19\n  .R_STOP\n\n\nVM_OVERLAY_SET_SUBMAP_EX .ARG5\nVM_POP 6\n",
+                    "__collapse": false,
+                    "__comment": false
+                  },
+                  "id": "aff2804f-f79a-49b2-889d-b9a53f06c32d"
+                }
+              ]
+            },
+            "id": "3bae2f81-2282-4b66-8ab7-f347a9070f03"
+          }
+        ]
+      },
+      "id": "d2ef63e4-643c-455a-ab88-a91708bb847c"
+    },
+    {
+      "command": "EVENT_OVERLAY_MOVE_TO",
+      "args": {
+        "x": 0,
+        "y": 18,
+        "speed": 1,
+        "__collapse": true
+      },
+      "id": "c17ced88-fd72-4f7c-bd88-bf47ec392f13"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 0.5,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "cb114b7f-489f-4157-b9ac-f420e8b25c6f"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "821a100f-f3cb-48b2-831c-940dbfb0e21c",
+        "__collapse": false
+      },
+      "id": "467f96da-c7fc-4e85-ad49-42ddc0361249"
+    },
+    {
+      "command": "EVENT_CAMERA_MOVE_TO",
+      "args": {
+        "x": {
+          "type": "number",
+          "value": 20
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "speed": 0,
+        "__collapse": false
+      },
+      "id": "a1b0a3a2-8f22-476f-86d4-64a08b6ab69e"
+    },
+    {
+      "command": "EVENT_ACTOR_DEACTIVATE",
+      "args": {
+        "actorId": "8158789a-f876-4a3d-bfae-e86cb6d4a02a",
+        "__collapse": true
+      },
+      "id": "120d809e-70d2-469f-80cc-51924db965ff"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "d2b639b4-3abe-44e9-9b8c-efcaed40efba"
+    },
+    {
+      "command": "EVENT_ACTOR_ACTIVATE",
+      "args": {
+        "actorId": "8158789a-f876-4a3d-bfae-e86cb6d4a02a",
+        "__collapse": true
+      },
+      "id": "5addc443-1b07-40f7-8130-2d22ccdbdd01"
+    },
+    {
+      "command": "EVENT_MUSIC_PLAY",
+      "args": {
+        "musicId": "14029292-c947-4abf-98c8-3f3a8acf9f84",
+        "__collapse": true
+      },
+      "id": "0742cd3f-c95a-43ad-b33c-26f2bb64acfb"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": 1,
+        "frames": 30,
+        "__collapse": true
+      },
+      "id": "c31d5c43-fd86-4504-a965-8f3275c645c6"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+      "args": {
+        "actorId": "8158789a-f876-4a3d-bfae-e86cb6d4a02a",
+        "speed": 255,
+        "__collapse": true
+      },
+      "id": "7e8f36a6-8ab6-4ac2-9c9b-475fa120f841"
+    },
+    {
+      "command": "EVENT_GROUP",
+      "args": {
+        "__label": "Event Group: Fade Logo to White",
+        "__collapse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 0,0,0 0,0,0 0,0,0 32,32,32\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 32,32,32\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 32,32,32\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 32,32,32\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 32,32,32\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 32,32,32",
+              "__collapse": false,
+              "__comment": false
+            },
+            "id": "989dc5f6-7f8f-4a2b-90e3-b4a1ed7860da"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.1,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "c072d176-874f-4b42-8df0-413d7c928f9f"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 0,0,0 0,0,0 0,0,0 80,80,80\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 80,80,80\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 80,80,80\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 80,80,80\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 80,80,80\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 80,80,80",
+              "__collapse": false
+            },
+            "id": "fd477c00-f456-4f04-93a5-7b182be54cf7"
+          },
+          {
+            "command": "EVENT_WAIT",
+            "args": {
+              "time": 0.1,
+              "frames": 30,
+              "__collapse": true
+            },
+            "id": "2e1ef3df-0866-487e-9c3e-002d7872537e"
+          },
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "script": "VM_LOAD_PALETTE 1, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n .CGB_PAL 0,0,0 0,0,0 0,0,0 255,255,255\n \nVM_LOAD_PALETTE 2, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 28,24,1 24,17,1 255,255,255\n\nVM_LOAD_PALETTE 4, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,31,1 31,31,1 30,27,1 255,255,255\n\nVM_LOAD_PALETTE 8, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 29,14,1 31,11,1 22,7,1 255,255,255\n\nVM_LOAD_PALETTE 16, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 31,22,1 31,17,1 31,11,1 255,255,255\n\nVM_LOAD_PALETTE 32, ^/(.PALETTE_BKG | .PALETTE_COMMIT)/ \n.CGB_PAL 22,21,27 21,21,21 5,5,5 255,255,255",
+              "__collapse": false
+            },
+            "id": "152ec3e9-e087-490a-90e4-9fcb26d34e55"
+          }
+        ]
+      },
+      "id": "eb45287d-9809-4870-99c6-43f51cdec6ed"
+    }
+  ],
+  "playerHit1Script": [
+    {
+      "command": "EVENT_ACTOR_MOVE_RELATIVE",
+      "args": {
+        "actorId": "821a100f-f3cb-48b2-831c-940dbfb0e21c",
+        "x": {
+          "type": "number",
+          "value": 1
+        },
+        "y": {
+          "type": "number",
+          "value": 0
+        },
+        "moveType": "horizontal",
+        "useCollisions": false
+      },
+      "id": "1b650622-b097-47a6-90ec-def02aa62a5d"
+    },
+    {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "script": "VM_OVERLAY_SET_SUBMAP 0, 0, 1, 1, 0, 19",
+        "actorId": "52becf9f-17e8-4313-922a-21c4c13bbccd",
+        "x": 1,
+        "y": 0,
+        "moveType": "horizontal",
+        "useCollisions": false,
+        "__collapse": true
+      },
+      "id": "d3ab1037-9ef7-40b1-bd13-3a67d9fcdaaf"
+    }
+  ],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": ""
+}

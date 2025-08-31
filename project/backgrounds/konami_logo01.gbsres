@@ -1,0 +1,13 @@
+{
+  "_resourceType": "background",
+  "id": "9b12c384-e734-483c-8d90-86933682719f",
+  "name": "Konami_Logo01",
+  "symbol": "bg_konami_logo01",
+  "width": 40,
+  "height": 20,
+  "imageWidth": 320,
+  "imageHeight": 160,
+  "filename": "Konami_Logo01.png",
+  "tileColors": "0486+062+0422+06!048a+00!044c+00!0422+002+04105+003+046+00b+0410+",
+  "autoColor": true
+}
