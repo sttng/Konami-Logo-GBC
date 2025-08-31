@@ -72,6 +72,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000001  ___bank_VM_PALETTE                 vm_palette
      00000001  ___bank_VM_SGB                     vm_sgb
      00000001  ___bank_bg_konami_logo01_tileset   bg_konami_logo01_tileset
+     00000001  b_SIO_init                         sio
      00000001  b_activate_actor                   actor
      00000001  b_activate_actors_in_col           actor
      00000001  b_activate_actors_in_row           actor
@@ -90,7 +91,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000001  b_check_collision_in_direction     actor
      00000001  b_deactivate_actor                 actor
      00000001  b_player_init                      actor
-     00000001  b_remove_LCD_ISRs                  interrupts
      00000001  b_ui_draw_frame                    ui
      00000001  b_ui_draw_text_buffer_char         ui
      00000001  b_ui_init                          ui
@@ -226,7 +226,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000003  ___bank_bg_konami_logo01_tilemap   bg_konami_logo01_tilemap
      00000003  ___bank_bg_konami_logo01_tilemap   bg_konami_logo01_tilemap_att
      00000003  ___bank_scene_8_collisions         scene_8_collisions
-     00000003  ___bank_scene_8_init               scene_8_init
      00000003  b___HandleCrash_banked             
      00000003  b_atan2                            math_atan2
      00000003  b_camera_shake_frames              vm_camera
@@ -237,6 +236,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000003  b_data_load                        load_save
      00000003  b_data_peek                        load_save
      00000003  b_data_save                        load_save
+     00000003  b_fade_applypalettechange          fade_manager
 ASxxxx Linker V03.00/V05.40 + sdld,  page 5.
 Hexadecimal  [32-Bits]
 
@@ -246,16 +246,22 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00000003  b_events_init                      events
+     00000003  b_fade_in                          fade_manager
+     00000003  b_fade_in_modal                    fade_manager
+     00000003  b_fade_init                        fade_manager
+     00000003  b_fade_out                         fade_manager
+     00000003  b_fade_out_modal                   fade_manager
+     00000003  b_fade_setspeed                    fade_manager
+     00000003  b_fade_update                      fade_manager
      00000003  b_gbprinter_detect                 gbprinter
      00000003  b_gbprinter_print_overlay          gbprinter
+     00000003  b_itoa_fmt                         vm_ui_a
      00000003  b_projectile_launch                projectiles
      00000003  b_projectiles_init                 projectiles
      00000003  b_scroll_init                      scroll
      00000003  b_scroll_repaint                   scroll
      00000003  b_scroll_reset                     scroll
      00000003  b_scroll_update                    scroll
-     00000003  b_timers_init                      events
      00000003  b_topdown_init                     topdown
      00000003  b_topdown_update                   topdown
      00000003  b_trigger_activate_at              trigger
@@ -291,12 +297,6 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000003  l__HRAM12                       
      00000004  ___bank_VM_GBPRINTER               vm_gbprinter
      00000004  ___bank_VM_LOAD_SAVE               vm_load_save
-     00000004  ___bank_VM_MATH                    vm_math
-     00000004  ___bank_VM_MUSIC                   vm_music
-     00000004  ___bank_VM_PROJECTILE              vm_projectiles
-     00000004  ___bank_VM_RTC                     vm_rtc
-     00000004  ___bank_VM_SCENE                   vm_scene
-     00000004  ___bank_bg_konami_logo01           bg_konami_logo01
 ASxxxx Linker V03.00/V05.40 + sdld,  page 6.
 Hexadecimal  [32-Bits]
 
@@ -306,6 +306,12 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
+     00000004  ___bank_VM_MATH                    vm_math
+     00000004  ___bank_VM_MUSIC                   vm_music
+     00000004  ___bank_VM_PROJECTILE              vm_projectiles
+     00000004  ___bank_VM_RTC                     vm_rtc
+     00000004  ___bank_VM_SCENE                   vm_scene
+     00000004  ___bank_bg_konami_logo01           bg_konami_logo01
      00000004  ___bank_bootstrap_script           
      00000004  ___bank_cursor_image               cursor_image
      00000004  ___bank_frame_image                frame_image
@@ -313,6 +319,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000004  ___bank_palette_1                  palette_1
      00000004  ___bank_scene_8                    scene_8
      00000004  ___bank_scene_8_actors             scene_8_actors
+     00000004  ___bank_scene_8_init               scene_8_init
      00000004  ___bank_scene_8_p_hit1             scene_8_p_hit1
      00000004  ___bank_scene_8_sprites            scene_8_sprites
      00000004  ___bank_script_engine_init         
@@ -333,19 +340,10 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000004  ___bank_tileset_default_frame      tileset_default_frame
      00000004  __start_save                    
      00000004  b_CGBZeroPalette                   palette
-     00000004  b_SIO_init                         sio
      00000004  b_camera_init                      camera
      00000004  b_erase_flash                      
-     00000004  b_fade_applypalettechange          fade_manager
-     00000004  b_fade_in                          fade_manager
-     00000004  b_fade_in_modal                    fade_manager
-     00000004  b_fade_init                        fade_manager
-     00000004  b_fade_out                         fade_manager
-     00000004  b_fade_out_modal                   fade_manager
-     00000004  b_fade_setspeed                    fade_manager
-     00000004  b_fade_update                      fade_manager
+     00000004  b_events_init                      events
      00000004  b_input_init                       input
-     00000004  b_itoa_fmt                         vm_ui_a
      00000004  b_logo_init                        logo
      00000004  b_logo_update                      logo
      00000004  b_music_events_poll                music_manager
@@ -353,9 +351,11 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000004  b_music_init_events                music_manager
      00000004  b_palette_init                     palette
      00000004  b_parallax_init                    parallax
+     00000004  b_remove_LCD_ISRs                  interrupts
      00000004  b_save_sram_banks                  
      00000004  b_scroll_rect                      
      00000004  b_set_sgb_border                   sgb_border
+     00000004  b_timers_init                      events
      00000004  b_vm_cos_scale                     vm_math
 ASxxxx Linker V03.00/V05.40 + sdld,  page 7.
 Hexadecimal  [32-Bits]
@@ -406,7 +406,7 @@ Area                                    Addr        Size        Decimal Bytes (A
      00000200  s__CODE                         
      00000EB9  l__CODE                         
      000010B9  s__HOME                         
-     00001749  l__CODE_4                       
+     00001645  l__CODE_4                       
      00001971  l__DATA                         
      00002000  _rROMB0                            
      00002D53  l__HOME                         
@@ -426,9 +426,9 @@ Area                                    Addr        Size        Decimal Bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00003FF7  l__CODE_3                       
+     00003FFA  l__CODE_1                       
      00003FFB  l__CODE_2                       
-     00003FFC  l__CODE_1                       
+     00003FFD  l__CODE_3                       
      00004000  _RTC_SELECT_REG                    vm_rtc
      00004000  _rRAMB                             
      00006000  _RTC_LATCH_REG                     vm_rtc
@@ -1212,7 +1212,7 @@ Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_1                             00014000    00003FFC =       16380. bytes (REL,CON)
+_CODE_1                             00014000    00003FFA =       16378. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1237,231 +1237,254 @@ _CODE_1                             00014000    00003FFC =       16380. bytes (R
      00014A61  _actor_overlapping_bb              actor
      00014CDF  _actors_handle_player_collision    actor
      00014D6B  _check_collision_in_direction      actor
-     00015589  _remove_LCD_ISRs                   interrupts
-     000155A4  _ui_swap_tiles                     
-     000155EE  _ui_print_make_mask_lr             
-     0001560A  _ui_print_make_mask_rl             
-     00015626  _ui_init                           ui
-     000156F7  _ui_load_tiles                     ui
-     0001574E  _ui_draw_frame                     ui
-     000157E8  _ui_print_reset                    ui
-     00015839  _ui_set_start_tile                 ui
-     00015865  _ui_print_render                   ui
-     00015AFB  _ui_draw_text_buffer_char          ui
-     00015FE5  _ui_run_menu                       ui
-     000161BC  _ui_run_modal                      ui
-     00016276  ___func_VM_ACTOR                   vm_actor
-     00016276  _vm_actor_move_to                  vm_actor
-     00016CBC  _vm_actor_move_cancel              vm_actor
-     00016CF2  _vm_actor_activate                 vm_actor
-     00016D43  _vm_actor_deactivate               vm_actor
-     00016D94  _vm_actor_begin_update             vm_actor
-     00016E1B  _vm_actor_terminate_update         vm_actor
-     00016E62  _vm_actor_set_dir                  vm_actor
-     00016EAB  _vm_actor_set_anim                 vm_actor
-     00016F39  _vm_actor_set_pos                  vm_actor
-     00016FB3  _vm_actor_get_pos                  vm_actor
-     00017022  _vm_actor_get_dir                  vm_actor
-     0001709C  _vm_actor_get_angle                vm_actor
-     0001711D  _vm_actor_emote                    vm_actor
-     000171E1  _vm_actor_set_bounds               vm_actor
-     0001723F  _vm_actor_set_spritesheet          vm_actor
+     00015589  _SIO_init                          sio
+     000155B2  _ui_swap_tiles                     
+     000155FC  _ui_print_make_mask_lr             
+     00015618  _ui_print_make_mask_rl             
+     00015634  _ui_init                           ui
+     00015705  _ui_load_tiles                     ui
+     0001575C  _ui_draw_frame                     ui
+     000157F6  _ui_print_reset                    ui
+     00015847  _ui_set_start_tile                 ui
+     00015873  _ui_print_render                   ui
+     00015B09  _ui_draw_text_buffer_char          ui
+     00015FF3  _ui_run_menu                       ui
+     000161CA  _ui_run_modal                      ui
+     00016284  ___func_VM_ACTOR                   vm_actor
+     00016284  _vm_actor_move_to                  vm_actor
+     00016CCA  _vm_actor_move_cancel              vm_actor
+     00016D00  _vm_actor_activate                 vm_actor
+     00016D51  _vm_actor_deactivate               vm_actor
+     00016DA2  _vm_actor_begin_update             vm_actor
+     00016E29  _vm_actor_terminate_update         vm_actor
+     00016E70  _vm_actor_set_dir                  vm_actor
+     00016EB9  _vm_actor_set_anim                 vm_actor
+     00016F47  _vm_actor_set_pos                  vm_actor
+     00016FC1  _vm_actor_get_pos                  vm_actor
+     00017030  _vm_actor_get_dir                  vm_actor
+     000170AA  _vm_actor_get_angle                vm_actor
+     0001712B  _vm_actor_emote                    vm_actor
+     000171EF  _vm_actor_set_bounds               vm_actor
+     0001724D  _vm_actor_set_spritesheet          vm_actor
 ASxxxx Linker V03.00/V05.40 + sdld,  page 42.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_1                             00014000    00003FFC =       16380. bytes (REL,CON)
+_CODE_1                             00014000    00003FFA =       16378. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00017309  _vm_actor_replace_tile             vm_actor
-     00017374  _vm_actor_set_anim_tick            vm_actor
-     000173B2  _vm_actor_set_move_speed           vm_actor
-     000173F0  _vm_actor_set_anim_frame           vm_actor
-     00017434  _vm_actor_get_anim_frame           vm_actor
-     0001747E  _vm_actor_set_anim_set             vm_actor
-     00017506  _vm_actor_set_spritesheet_by_ref   vm_actor
-     00017613  _vm_actor_set_flags                vm_actor
-     000176C1  ___func_VM_PALETTE                 vm_palette
-     000176C1  _vm_load_palette                   vm_palette
-     0001786A  ___func_VM_SGB                     vm_sgb
-     0001786A  ___func_bg_konami_logo01_tileset   bg_konami_logo01_tileset
-     0001786A  _bg_konami_logo01_tileset          bg_konami_logo01_tileset
+     00017317  _vm_actor_replace_tile             vm_actor
+     00017382  _vm_actor_set_anim_tick            vm_actor
+     000173C0  _vm_actor_set_move_speed           vm_actor
+     000173FE  _vm_actor_set_anim_frame           vm_actor
+     00017442  _vm_actor_get_anim_frame           vm_actor
+     0001748C  _vm_actor_set_anim_set             vm_actor
+     00017514  _vm_actor_set_spritesheet_by_ref   vm_actor
+     00017621  _vm_actor_set_flags                vm_actor
+     000176CF  ___func_VM_PALETTE                 vm_palette
+     000176CF  _vm_load_palette                   vm_palette
+     00017878  ___func_VM_SGB                     vm_sgb
+     00017878  ___func_bg_konami_logo01_tileset   bg_konami_logo01_tileset
+     00017878  _bg_konami_logo01_tileset          bg_konami_logo01_tileset
 ASxxxx Linker V03.00/V05.40 + sdld,  page 43.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001749 =        5961. bytes (REL,CON)
+_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
      00044000  _bootstrap_script                  
      0004400B  _camera_init                       camera
-     00044031  _CGBFadeToWhiteStep                fade_manager
-     0004406A  _CGBFadeToBlackStep                fade_manager
-     000440A5  _ApplyPaletteChangeColor           fade_manager
-     000440E2  _fade_speeds                       fade_manager
-     000440E9  _DMGFadeToWhiteStep                fade_manager
-     0004410A  _DMGFadeToBlackStep                fade_manager
-     0004412D  _ApplyPaletteChangeDMG             fade_manager
-     00044183  _fade_init                         fade_manager
-     000441A4  _fade_in                           fade_manager
-     000441DC  _fade_out                          fade_manager
-     00044215  _fade_update                       fade_manager
-     00044268  _fade_applypalettechange           fade_manager
-     0004427A  _fade_setspeed                     fade_manager
-     0004428A  _fade_in_modal                     fade_manager
-     000442A4  _fade_out_modal                    fade_manager
-     00044326  _save_sram_banks                   
-     000443AE  _erase_flash                       
-     000443C4  _input_init                        input
-     000443EA  _music_init_driver                 music_manager
-     00044446  _music_init_events                 music_manager
-     00044482  _music_events_poll                 music_manager
-     000444AA  _music_pause                       music_manager
-     000444CC  _palette_init                      palette
-     00044503  _CGBZeroPalette                    palette
-     00044518  _parallax_init                     parallax
-     00044538  _scroll_rect                       
-     00044575  _set_sgb_border                    sgb_border
-     0004475F  _SIO_init                          sio
-     00044788  ___func_VM_GBPRINTER               vm_gbprinter
-     00044788  _vm_print_detect                   vm_gbprinter
-     000447D7  _vm_print_overlay                  vm_gbprinter
-     0004482C  ___func_VM_LOAD_SAVE               vm_load_save
-     0004482C  _vm_save_clear                     vm_load_save
-     0004483B  _vm_save_peek                      vm_load_save
-     000448BD  ___func_VM_MATH                    vm_math
-     000448BD  _vm_sin_scale                      vm_math
-     00044959  _vm_cos_scale                      vm_math
-     000449F7  ___func_VM_MUSIC                   vm_music
-     000449F7  _vm_music_play                     vm_music
-     00044A44  _vm_music_stop                     vm_music
-     00044A66  _vm_music_mute                     vm_music
-     00044AA4  _vm_music_routine                  vm_music
-     00044ACB  _vm_music_setpos                   vm_music
-     00044AD1  _vm_sound_mastervol                vm_music
-     00044AD7  _vm_sfx_play                       vm_music
-     00044B4A  ___func_VM_PROJECTILE              vm_projectiles
-     00044B4A  _vm_projectile_launch              vm_projectiles
-     00044B8B  _vm_projectile_load_type           vm_projectiles
+     00044031  _events_init                       events
+     00044071  _timers_init                       events
+     00044119  _save_sram_banks                   
+     000441A1  _erase_flash                       
+     000441B7  _input_init                        input
+     000441DD  _remove_LCD_ISRs                   interrupts
+     000441F8  _music_init_driver                 music_manager
+     00044254  _music_init_events                 music_manager
+     00044290  _music_events_poll                 music_manager
+     000442B8  _music_pause                       music_manager
+     000442DA  _palette_init                      palette
+     00044311  _CGBZeroPalette                    palette
+     00044326  _parallax_init                     parallax
+     00044346  _scroll_rect                       
+     00044383  _set_sgb_border                    sgb_border
+     0004456D  ___func_VM_GBPRINTER               vm_gbprinter
+     0004456D  _vm_print_detect                   vm_gbprinter
+     000445BC  _vm_print_overlay                  vm_gbprinter
+     00044611  ___func_VM_LOAD_SAVE               vm_load_save
+     00044611  _vm_save_clear                     vm_load_save
+     00044620  _vm_save_peek                      vm_load_save
+     000446A2  ___func_VM_MATH                    vm_math
+     000446A2  _vm_sin_scale                      vm_math
+     0004473E  _vm_cos_scale                      vm_math
+     000447DC  ___func_VM_MUSIC                   vm_music
+     000447DC  _vm_music_play                     vm_music
+     00044829  _vm_music_stop                     vm_music
+     0004484B  _vm_music_mute                     vm_music
+     00044889  _vm_music_routine                  vm_music
+     000448B0  _vm_music_setpos                   vm_music
+     000448B6  _vm_sound_mastervol                vm_music
+     000448BC  _vm_sfx_play                       vm_music
+     0004492F  ___func_VM_PROJECTILE              vm_projectiles
+     0004492F  _vm_projectile_launch              vm_projectiles
+     00044970  _vm_projectile_load_type           vm_projectiles
+     00044A02  ___func_VM_RTC                     vm_rtc
+     00044A02  _vm_rtc_latch                      vm_rtc
+     00044A0A  _vm_rtc_get                        vm_rtc
+     00044A71  _vm_rtc_set                        vm_rtc
+     00044ACF  _vm_rtc_start                      vm_rtc
+     00044AF2  ___func_VM_SCENE                   vm_scene
+     00044AF2  _vm_scene_push                     vm_scene
+     00044B68  _vm_scene_pop                      vm_scene
+     00044B76  _vm_scene_pop_all                  vm_scene
+     00044B81  _vm_scene_stack_reset              vm_scene
+     00044B8A  ___func_bg_konami_logo01           bg_konami_logo01
+     00044B8A  _bg_konami_logo01                  bg_konami_logo01
+     00044B98  ___func_cursor_image               cursor_image
 ASxxxx Linker V03.00/V05.40 + sdld,  page 44.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001749 =        5961. bytes (REL,CON)
+_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00044C1D  ___func_VM_RTC                     vm_rtc
-     00044C1D  _vm_rtc_latch                      vm_rtc
-     00044C25  _vm_rtc_get                        vm_rtc
-     00044C8C  _vm_rtc_set                        vm_rtc
-     00044CEA  _vm_rtc_start                      vm_rtc
-     00044D0D  ___func_VM_SCENE                   vm_scene
-     00044D0D  _vm_scene_push                     vm_scene
-     00044D83  _vm_scene_pop                      vm_scene
-     00044D91  _vm_scene_pop_all                  vm_scene
-     00044D9C  _vm_scene_stack_reset              vm_scene
-     00044DA5  _itoa_fmt                          vm_ui_a
-     00044DD9  .utoa_fmt                          vm_ui_a
-     00044E83  ___func_bg_konami_logo01           bg_konami_logo01
-     00044E83  _bg_konami_logo01                  bg_konami_logo01
-     00044E91  ___func_cursor_image               cursor_image
-     00044E91  _cursor_image                      cursor_image
-     00044EA1  ___func_frame_image                frame_image
-     00044EA1  _frame_image                       frame_image
-     00044F31  ___func_palette_0                  palette_0
-     00044F31  _palette_0                         palette_0
-     00044F74  ___func_palette_1                  palette_1
-     00044F74  _palette_1                         palette_1
-     00044FB7  ___func_scene_8_actors             scene_8_actors
-     00044FB7  _scene_8_actors                    scene_8_actors
-     00045087  _scene_8_p_hit1                    scene_8_p_hit1
-     0004509A  GBVM$scene_8_p_hit1$1b650622_b09   scene_8_p_hit1
-     000450ED  GBVM$scene_8_p_hit1$d3ab1037_9ef   scene_8_p_hit1
-     000450F6  ___func_scene_8_sprites            scene_8_sprites
-     000450F6  _scene_8_sprites                   scene_8_sprites
-     00045102  ___func_scene_8                    scene_8
-     00045102  _scene_8                           scene_8
-     0004513D  _script_engine_init                
-     00045151  ___func_sprite_actor_animated_ba   sprite_actor_animated_bank2_
-     00045151  _sprite_actor_animated_bank2_til   sprite_actor_animated_bank2_
-     000451F3  ___func_sprite_actor_animated_ti   sprite_actor_animated_tilese
-     000451F3  _sprite_actor_animated_tileset     sprite_actor_animated_tilese
-     00045295  ___func_sprite_actor_animated      sprite_actor_animated
-     00045295  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452A1  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452AD  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452B9  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452C5  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452D1  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452DD  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452E9  _sprite_actor_animated_metasprit   sprite_actor_animated
-     000452F5  _sprite_actor_animated_metasprit   sprite_actor_animated
-     0004530D  _sprite_actor_animated_animation   sprite_actor_animated
-     0004531D  _sprite_actor_animated_animation   sprite_actor_animated
-     0004531F  _sprite_actor_animated             sprite_actor_animated
-     00045332  ___func_sprite_konami_logo01_ban   sprite_konami_logo01_bank2_t
-     00045332  _sprite_konami_logo01_bank2_tile   sprite_konami_logo01_bank2_t
+     00044B98  _cursor_image                      cursor_image
+     00044BA8  ___func_frame_image                frame_image
+     00044BA8  _frame_image                       frame_image
+     00044C38  ___func_palette_0                  palette_0
+     00044C38  _palette_0                         palette_0
+     00044C7B  ___func_palette_1                  palette_1
+     00044C7B  _palette_1                         palette_1
+     00044CBE  ___func_scene_8_actors             scene_8_actors
+     00044CBE  _scene_8_actors                    scene_8_actors
+     00044D8E  _scene_8_init                      scene_8_init
+     00044D91  GBVM$scene_8_init$a4526d47_877a_   scene_8_init
+     00044DA1  GBVM$scene_8_init$9e824bbd_1ee5_   scene_8_init
+     00044DAB  GBVM$scene_8_init$624bad5b_a946_   scene_8_init
+     00044DB0  GBVM$scene_8_init$autofade$30555   scene_8_init
+     00044DBB  GBVM$scene_8_init$3bae2f81_2282_   scene_8_init
+     00044DBB  GBVM$scene_8_init$d2ef63e4_643c_   scene_8_init
+     00044DCC  GBVM$scene_8_init$f97fa634_75c8_   scene_8_init
+     00044DCD  GBVM$scene_8_init$dc44d986_01fb_   scene_8_init
+     00044E20  GBVM$scene_8_init$aff2804f_f79a_   scene_8_init
+     00044E43  GBVM$scene_8_init$c17ced88_fd72_   scene_8_init
+     00044E43  GBVM_END$scene_8_init$3bae2f81_2   scene_8_init
+     00044E43  GBVM_END$scene_8_init$d2ef63e4_6   scene_8_init
+     00044E4A  GBVM$scene_8_init$cb114b7f_489f_   scene_8_init
+     00044E56  GBVM$scene_8_init$467f96da_c7fc_   scene_8_init
+     00044E5E  GBVM$scene_8_init$a1b0a3a2_8f22_   scene_8_init
+     00044E6F  GBVM$scene_8_init$120d809e_70d2_   scene_8_init
+     00044E77  GBVM$scene_8_init$d2b639b4_3abe_   scene_8_init
+     00044E83  GBVM$scene_8_init$5addc443_1b07_   scene_8_init
+     00044E8B  GBVM$scene_8_init$0742cd3f_c95a_   scene_8_init
+     00044E8F  GBVM$scene_8_init$c31d5c43_fd86_   scene_8_init
+     00044E9B  GBVM$scene_8_init$7e8f36a6_8ab6_   scene_8_init
+     00044EA4  GBVM$scene_8_init$989dc5f6_7f8f_   scene_8_init
+     00044EA4  GBVM$scene_8_init$eb45287d_9809_   scene_8_init
+     00044EE6  GBVM$scene_8_init$c072d176_874f_   scene_8_init
+     00044EF2  GBVM$scene_8_init$fd477c00_f456_   scene_8_init
+     00044F34  GBVM$scene_8_init$2e1ef3df_0866_   scene_8_init
+     00044F40  GBVM$scene_8_init$152ec3e9_e087_   scene_8_init
+     00044F82  GBVM_END$scene_8_init$eb45287d_9   scene_8_init
+     00044F83  _scene_8_p_hit1                    scene_8_p_hit1
+     00044F96  GBVM$scene_8_p_hit1$1b650622_b09   scene_8_p_hit1
+     00044FE9  GBVM$scene_8_p_hit1$d3ab1037_9ef   scene_8_p_hit1
+     00044FF2  ___func_scene_8_sprites            scene_8_sprites
+     00044FF2  _scene_8_sprites                   scene_8_sprites
+     00044FFE  ___func_scene_8                    scene_8
+     00044FFE  _scene_8                           scene_8
+     00045039  _script_engine_init                
+     0004504D  ___func_sprite_actor_animated_ba   sprite_actor_animated_bank2_
+     0004504D  _sprite_actor_animated_bank2_til   sprite_actor_animated_bank2_
+     000450EF  ___func_sprite_actor_animated_ti   sprite_actor_animated_tilese
+     000450EF  _sprite_actor_animated_tileset     sprite_actor_animated_tilese
+     00045191  ___func_sprite_actor_animated      sprite_actor_animated
 ASxxxx Linker V03.00/V05.40 + sdld,  page 45.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_4                             00044000    00001749 =        5961. bytes (REL,CON)
+_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     00045394  ___func_sprite_konami_logo01_til   sprite_konami_logo01_tileset
-     00045394  _sprite_konami_logo01_tileset      sprite_konami_logo01_tileset
-     000453F6  ___func_sprite_konami_logo01       sprite_konami_logo01
-     000453F6  _sprite_konami_logo01_metasprite   sprite_konami_logo01
-     00045412  _sprite_konami_logo01_metasprite   sprite_konami_logo01
-     00045414  _sprite_konami_logo01_animations   sprite_konami_logo01
-     00045424  _sprite_konami_logo01_animations   sprite_konami_logo01
-     00045426  _sprite_konami_logo01              sprite_konami_logo01
-     00045439  ___func_sprite_konami_logo02_ban   sprite_konami_logo02_bank2_t
-     00045439  _sprite_konami_logo02_bank2_tile   sprite_konami_logo02_bank2_t
-     0004549B  ___func_sprite_konami_logo02_til   sprite_konami_logo02_tileset
-     0004549B  _sprite_konami_logo02_tileset      sprite_konami_logo02_tileset
-     000454FD  ___func_sprite_konami_logo02       sprite_konami_logo02
-     000454FD  _sprite_konami_logo02_metasprite   sprite_konami_logo02
-     00045519  _sprite_konami_logo02_metasprite   sprite_konami_logo02
-     0004551B  _sprite_konami_logo02_animations   sprite_konami_logo02
-     0004552B  _sprite_konami_logo02_animations   sprite_konami_logo02
-     0004552D  _sprite_konami_logo02              sprite_konami_logo02
-     00045540  ___func_sprite_konami_spark_bank   sprite_konami_spark_bank2_ti
-     00045540  _sprite_konami_spark_bank2_tiles   sprite_konami_spark_bank2_ti
-     000455A2  ___func_sprite_konami_spark_tile   sprite_konami_spark_tileset
-     000455A2  _sprite_konami_spark_tileset       sprite_konami_spark_tileset
-     00045604  ___func_sprite_konami_spark        sprite_konami_spark
-     00045604  _sprite_konami_spark_metasprite_   sprite_konami_spark
-     00045618  _sprite_konami_spark_metasprite_   sprite_konami_spark
-     0004562C  _sprite_konami_spark_metasprite_   sprite_konami_spark
-     00045640  _sprite_konami_spark_metasprites   sprite_konami_spark
-     00045646  _sprite_konami_spark_animations    sprite_konami_spark
-     00045656  _sprite_konami_spark_animations_   sprite_konami_spark
-     00045658  _sprite_konami_spark               sprite_konami_spark
-     0004566B  ___func_sprite_konami_text_gradi   sprite_konami_text_gradient_
-     0004566B  _sprite_konami_text_gradient_til   sprite_konami_text_gradient_
-     0004568D  _spritesheet_none_metasprite       spritesheet_none
-     00045691  _spritesheet_none_metasprites      spritesheet_none
-     00045693  _spritesheet_none                  spritesheet_none
-     000456A6  ___func_tileset_default_frame      tileset_default_frame
-     000456A6  _tileset_default_frame             tileset_default_frame
-     00045738  _logo_init                         logo
-     00045748  _logo_update                       logo
-
+     00045191  _sprite_actor_animated_metasprit   sprite_actor_animated
+     0004519D  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451A9  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451B5  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451C1  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451CD  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451D9  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451E5  _sprite_actor_animated_metasprit   sprite_actor_animated
+     000451F1  _sprite_actor_animated_metasprit   sprite_actor_animated
+     00045209  _sprite_actor_animated_animation   sprite_actor_animated
+     00045219  _sprite_actor_animated_animation   sprite_actor_animated
+     0004521B  _sprite_actor_animated             sprite_actor_animated
+     0004522E  ___func_sprite_konami_logo01_ban   sprite_konami_logo01_bank2_t
+     0004522E  _sprite_konami_logo01_bank2_tile   sprite_konami_logo01_bank2_t
+     00045290  ___func_sprite_konami_logo01_til   sprite_konami_logo01_tileset
+     00045290  _sprite_konami_logo01_tileset      sprite_konami_logo01_tileset
+     000452F2  ___func_sprite_konami_logo01       sprite_konami_logo01
+     000452F2  _sprite_konami_logo01_metasprite   sprite_konami_logo01
+     0004530E  _sprite_konami_logo01_metasprite   sprite_konami_logo01
+     00045310  _sprite_konami_logo01_animations   sprite_konami_logo01
+     00045320  _sprite_konami_logo01_animations   sprite_konami_logo01
+     00045322  _sprite_konami_logo01              sprite_konami_logo01
+     00045335  ___func_sprite_konami_logo02_ban   sprite_konami_logo02_bank2_t
+     00045335  _sprite_konami_logo02_bank2_tile   sprite_konami_logo02_bank2_t
+     00045397  ___func_sprite_konami_logo02_til   sprite_konami_logo02_tileset
+     00045397  _sprite_konami_logo02_tileset      sprite_konami_logo02_tileset
+     000453F9  ___func_sprite_konami_logo02       sprite_konami_logo02
+     000453F9  _sprite_konami_logo02_metasprite   sprite_konami_logo02
+     00045415  _sprite_konami_logo02_metasprite   sprite_konami_logo02
+     00045417  _sprite_konami_logo02_animations   sprite_konami_logo02
+     00045427  _sprite_konami_logo02_animations   sprite_konami_logo02
+     00045429  _sprite_konami_logo02              sprite_konami_logo02
+     0004543C  ___func_sprite_konami_spark_bank   sprite_konami_spark_bank2_ti
+     0004543C  _sprite_konami_spark_bank2_tiles   sprite_konami_spark_bank2_ti
+     0004549E  ___func_sprite_konami_spark_tile   sprite_konami_spark_tileset
+     0004549E  _sprite_konami_spark_tileset       sprite_konami_spark_tileset
+     00045500  ___func_sprite_konami_spark        sprite_konami_spark
+     00045500  _sprite_konami_spark_metasprite_   sprite_konami_spark
+     00045514  _sprite_konami_spark_metasprite_   sprite_konami_spark
+     00045528  _sprite_konami_spark_metasprite_   sprite_konami_spark
+     0004553C  _sprite_konami_spark_metasprites   sprite_konami_spark
+     00045542  _sprite_konami_spark_animations    sprite_konami_spark
+     00045552  _sprite_konami_spark_animations_   sprite_konami_spark
+     00045554  _sprite_konami_spark               sprite_konami_spark
+     00045567  ___func_sprite_konami_text_gradi   sprite_konami_text_gradient_
+     00045567  _sprite_konami_text_gradient_til   sprite_konami_text_gradient_
+     00045589  _spritesheet_none_metasprite       spritesheet_none
+     0004558D  _spritesheet_none_metasprites      spritesheet_none
+     0004558F  _spritesheet_none                  spritesheet_none
+     000455A2  ___func_tileset_default_frame      tileset_default_frame
+     000455A2  _tileset_default_frame             tileset_default_frame
 ASxxxx Linker V03.00/V05.40 + sdld,  page 46.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_3                             00034000    00003FF7 =       16375. bytes (REL,CON)
+_CODE_4                             00044000    00001645 =        5701. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00045634  _logo_init                         logo
+     00045644  _logo_update                       logo
+
+ASxxxx Linker V03.00/V05.40 + sdld,  page 47.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE_3                             00034000    00003FFD =       16381. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
@@ -1469,114 +1492,99 @@ _CODE_3                             00034000    00003FF7 =       16375. bytes (R
      00034075  _process_VM                        core
      000342F3  _core_run                          core
      000343CF  ___HandleCrash_banked              
-     00034737  _events_init                       events
-     00034777  _timers_init                       events
-     000347B7  _printer_send_receive              gbprinter
-     000347ED  _printer_send_byte                 gbprinter
-     00034800  _printer_send_command              gbprinter
-     00034823  _printer_print_tile                gbprinter
-     000348B4  _printer_wait                      gbprinter
-     000348E6  _gbprinter_detect                  gbprinter
-     00034900  _gbprinter_print_overlay           gbprinter
-     00034ACD  _data_init                         load_save
-     00034B18  _save_points                       load_save
-     00034B78  _data_slot_address                 load_save
-     00034BF0  _data_save                         load_save
-     00034CB1  _data_load                         load_save
-     00034DC5  _data_clear                        load_save
-     00034DF2  _data_peek                         load_save
-     00034E93  _atan2                             math_atan2
-     0003502C  _atan2_table                       math_atan2
-     00035194  _projectiles_init                  projectiles
-     000351C3  _projectile_launch                 projectiles
-     000355BD  _scroll_init                       scroll
-     000355E7  _scroll_reset                      scroll
-     00035607  _scroll_update                     scroll
-     0003573E  _scroll_viewport                   scroll
-     00035BD7  _scroll_repaint                    scroll
-     00035BE7  _scroll_render_rows                scroll
-     00035C7D  _scroll_queue_row                  scroll
-     00035C9F  _scroll_queue_col                  scroll
-     00035CEA  _trigger_reset                     trigger
-     00035CFA  _trigger_interact                  trigger
-     00035D39  _trigger_activate_at               trigger
-     00035D84  _trigger_at_intersection           trigger
-     00035EAB  _trigger_activate_at_intersectio   trigger
-     00035FEC  _trigger_at_tile                   trigger
-     0003607D  ___func_VM_CAMERA                  vm_camera
-     0003607D  _vm_camera_move_to                 vm_camera
-     000362D0  _vm_camera_set_pos                 vm_camera
-     00036317  _camera_shake_frames               vm_camera
-     00036446  ___func_VM_GAMEBOY                 vm_gameboy
-     00036446  _vm_set_sprites_visible            vm_gameboy
-     0003645D  _vm_input_wait                     vm_gameboy
-     00036486  _vm_context_prepare                vm_gameboy
-     000364B1  _vm_input_attach                   vm_gameboy
-     000364C7  _vm_input_detach                   vm_gameboy
-     000364DB  _vm_input_get                      vm_gameboy
-     0003650F  _vm_fade                           vm_gameboy
-ASxxxx Linker V03.00/V05.40 + sdld,  page 47.
+     00034737  _CGBFadeToWhiteStep                fade_manager
+     00034770  _CGBFadeToBlackStep                fade_manager
+     000347AB  _ApplyPaletteChangeColor           fade_manager
+     000347E8  _fade_speeds                       fade_manager
+     000347EF  _DMGFadeToWhiteStep                fade_manager
+     00034810  _DMGFadeToBlackStep                fade_manager
+     00034833  _ApplyPaletteChangeDMG             fade_manager
+     00034889  _fade_init                         fade_manager
+     000348AA  _fade_in                           fade_manager
+     000348E2  _fade_out                          fade_manager
+     0003491B  _fade_update                       fade_manager
+     0003496E  _fade_applypalettechange           fade_manager
+     00034980  _fade_setspeed                     fade_manager
+     00034990  _fade_in_modal                     fade_manager
+     000349AA  _fade_out_modal                    fade_manager
+     000349C4  _printer_send_receive              gbprinter
+     000349FA  _printer_send_byte                 gbprinter
+     00034A0D  _printer_send_command              gbprinter
+     00034A30  _printer_print_tile                gbprinter
+     00034AC1  _printer_wait                      gbprinter
+     00034AF3  _gbprinter_detect                  gbprinter
+     00034B0D  _gbprinter_print_overlay           gbprinter
+     00034CDA  _data_init                         load_save
+     00034D25  _save_points                       load_save
+     00034D85  _data_slot_address                 load_save
+     00034DFD  _data_save                         load_save
+     00034EBE  _data_load                         load_save
+     00034FD2  _data_clear                        load_save
+     00034FFF  _data_peek                         load_save
+     000350A0  _atan2                             math_atan2
+     00035239  _atan2_table                       math_atan2
+     000353A1  _projectiles_init                  projectiles
+     000353D0  _projectile_launch                 projectiles
+     000357CA  _scroll_init                       scroll
+     000357F4  _scroll_reset                      scroll
+     00035814  _scroll_update                     scroll
+     0003594B  _scroll_viewport                   scroll
+     00035DE4  _scroll_repaint                    scroll
+     00035DF4  _scroll_render_rows                scroll
+     00035E8A  _scroll_queue_row                  scroll
+     00035EAC  _scroll_queue_col                  scroll
+     00035EF7  _trigger_reset                     trigger
+     00035F07  _trigger_interact                  trigger
+     00035F46  _trigger_activate_at               trigger
+     00035F91  _trigger_at_intersection           trigger
+     000360B8  _trigger_activate_at_intersectio   trigger
+ASxxxx Linker V03.00/V05.40 + sdld,  page 48.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
 --------------------------------        ----        ----        ------- ----- ------------
-_CODE_3                             00034000    00003FF7 =       16375. bytes (REL,CON)
+_CODE_3                             00034000    00003FFD =       16381. bytes (REL,CON)
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-     0003653F  _vm_timer_prepare                  vm_gameboy
-     0003656A  _vm_timer_set                      vm_gameboy
-     00036585  _vm_timer_stop                     vm_gameboy
-     00036599  _vm_timer_reset                    vm_gameboy
-     000365B0  _vm_get_tile_xy                    vm_gameboy
-     00036686  _vm_replace_tile                   vm_gameboy
-     00036731  _vm_poll                           vm_gameboy
-     00036803  _vm_set_sprite_mode                vm_gameboy
-     00036817  _vm_replace_tile_xy                vm_gameboy
-     000369F7  _vm_rumble                         vm_gameboy
-     00036A17  _vm_load_tileset                   vm_gameboy
-     00036AE8  ___func_VM_SIO                     vm_sio
-     00036AE8  _vm_sio_set_mode                   vm_sio
-     00036AFA  _vm_sio_exchange                   vm_sio
-     00036DDC  ___func_bg_konami_logo01_tilemap   bg_konami_logo01_tilemap_att
-     00036DDC  _bg_konami_logo01_tilemap_attr     bg_konami_logo01_tilemap_att
-     000370FC  ___func_bg_konami_logo01_tilemap   bg_konami_logo01_tilemap
-     000370FC  _bg_konami_logo01_tilemap          bg_konami_logo01_tilemap
-     0003741C  ___func_scene_8_collisions         scene_8_collisions
-     0003741C  _scene_8_collisions                scene_8_collisions
-     0003773C  _scene_8_init                      scene_8_init
-     0003773F  GBVM$scene_8_init$a4526d47_877a_   scene_8_init
-     0003774F  GBVM$scene_8_init$9e824bbd_1ee5_   scene_8_init
-     00037759  GBVM$scene_8_init$624bad5b_a946_   scene_8_init
-     0003775E  GBVM$scene_8_init$autofade$30555   scene_8_init
-     00037769  GBVM$scene_8_init$3bae2f81_2282_   scene_8_init
-     00037769  GBVM$scene_8_init$d2ef63e4_643c_   scene_8_init
-     0003777A  GBVM$scene_8_init$f97fa634_75c8_   scene_8_init
-     0003777B  GBVM$scene_8_init$dc44d986_01fb_   scene_8_init
-     000377CE  GBVM$scene_8_init$aff2804f_f79a_   scene_8_init
-     000377F1  GBVM$scene_8_init$c17ced88_fd72_   scene_8_init
-     000377F1  GBVM_END$scene_8_init$3bae2f81_2   scene_8_init
-     000377F1  GBVM_END$scene_8_init$d2ef63e4_6   scene_8_init
-     000377F8  GBVM$scene_8_init$cb114b7f_489f_   scene_8_init
-     00037804  GBVM$scene_8_init$467f96da_c7fc_   scene_8_init
-     0003780C  GBVM$scene_8_init$a1b0a3a2_8f22_   scene_8_init
-     0003781D  GBVM$scene_8_init$120d809e_70d2_   scene_8_init
-     00037825  GBVM$scene_8_init$d2b639b4_3abe_   scene_8_init
-     00037831  GBVM$scene_8_init$5addc443_1b07_   scene_8_init
-     00037839  GBVM$scene_8_init$0742cd3f_c95a_   scene_8_init
-     0003783D  GBVM$scene_8_init$c31d5c43_fd86_   scene_8_init
-     00037849  GBVM$scene_8_init$7e8f36a6_8ab6_   scene_8_init
-     00037852  GBVM$scene_8_init$989dc5f6_7f8f_   scene_8_init
-     00037852  GBVM$scene_8_init$eb45287d_9809_   scene_8_init
-     00037894  GBVM$scene_8_init$c072d176_874f_   scene_8_init
-     000378A0  GBVM$scene_8_init$fd477c00_f456_   scene_8_init
-     000378E2  GBVM$scene_8_init$2e1ef3df_0866_   scene_8_init
-     000378EE  GBVM$scene_8_init$152ec3e9_e087_   scene_8_init
-     00037930  GBVM_END$scene_8_init$eb45287d_9   scene_8_init
-     00037931  _topdown_init                      topdown
-     000379CD  _topdown_update                    topdown
-
-ASxxxx Linker V03.00/V05.40 + sdld,  page 48.
+     000361F9  _trigger_at_tile                   trigger
+     0003628A  ___func_VM_CAMERA                  vm_camera
+     0003628A  _vm_camera_move_to                 vm_camera
+     000364DD  _vm_camera_set_pos                 vm_camera
+     00036524  _camera_shake_frames               vm_camera
+     00036653  ___func_VM_GAMEBOY                 vm_gameboy
+     00036653  _vm_set_sprites_visible            vm_gameboy
+     0003666A  _vm_input_wait                     vm_gameboy
+     00036693  _vm_context_prepare                vm_gameboy
+     000366BE  _vm_input_attach                   vm_gameboy
+     000366D4  _vm_input_detach                   vm_gameboy
+     000366E8  _vm_input_get                      vm_gameboy
+     0003671C  _vm_fade                           vm_gameboy
+     0003674C  _vm_timer_prepare                  vm_gameboy
+     00036777  _vm_timer_set                      vm_gameboy
+     00036792  _vm_timer_stop                     vm_gameboy
+     000367A6  _vm_timer_reset                    vm_gameboy
+     000367BD  _vm_get_tile_xy                    vm_gameboy
+     00036893  _vm_replace_tile                   vm_gameboy
+     0003693E  _vm_poll                           vm_gameboy
+     00036A10  _vm_set_sprite_mode                vm_gameboy
+     00036A24  _vm_replace_tile_xy                vm_gameboy
+     00036C04  _vm_rumble                         vm_gameboy
+     00036C24  _vm_load_tileset                   vm_gameboy
+     00036CF5  ___func_VM_SIO                     vm_sio
+     00036CF5  _vm_sio_set_mode                   vm_sio
+     00036D07  _vm_sio_exchange                   vm_sio
+     00036FE9  _itoa_fmt                          vm_ui_a
+     0003701D  .utoa_fmt                          vm_ui_a
+     000370C7  ___func_bg_konami_logo01_tilemap   bg_konami_logo01_tilemap_att
+     000370C7  _bg_konami_logo01_tilemap_attr     bg_konami_logo01_tilemap_att
+     00037397  ___func_bg_konami_logo01_tilemap   bg_konami_logo01_tilemap
+     00037397  _bg_konami_logo01_tilemap          bg_konami_logo01_tilemap
+     00037667  ___func_scene_8_collisions         scene_8_collisions
+     00037667  _scene_8_collisions                scene_8_collisions
+     00037937  _topdown_init                      topdown
+     000379D3  _topdown_update                    topdown
+ASxxxx Linker V03.00/V05.40 + sdld,  page 49.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1585,7 +1593,7 @@ _CRASH_HEADER0                      00000000    00000005 =           5. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00/V05.40 + sdld,  page 49.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 50.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1594,7 +1602,7 @@ _CRASH_HEADER1                      00000000    00000004 =           4. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00/V05.40 + sdld,  page 50.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 51.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1603,7 +1611,7 @@ _CRASH_SCRATCH2                     00000000    000001CB =         459. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00/V05.40 + sdld,  page 51.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 52.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1662,7 +1670,7 @@ _CODE_2                             00024000    00003FFB =       16379. bytes (R
      000259FC  _vm_reserve                        vm
      00025A2A  _vm_set                            vm
      00025A8B  _vm_set_const                      vm
-ASxxxx Linker V03.00/V05.40 + sdld,  page 52.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 53.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1720,7 +1728,7 @@ _CODE_2                             00024000    00003FFB =       16379. bytes (R
      00027FD6  _sprite_konami_text_gradient_ani   sprite_konami_text_gradient
      00027FE6  _sprite_konami_text_gradient_ani   sprite_konami_text_gradient
      00027FE8  _sprite_konami_text_gradient       sprite_konami_text_gradient
-ASxxxx Linker V03.00/V05.40 + sdld,  page 53.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 54.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1729,7 +1737,7 @@ _HEADER_SIO0                        00000000    00000004 =           4. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00/V05.40 + sdld,  page 54.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 55.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1738,7 +1746,7 @@ _HEADER_TIMER0                      00000000    00000004 =           4. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00/V05.40 + sdld,  page 55.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 56.
 Hexadecimal  [32-Bits]
 
 Area                                    Addr        Size        Decimal Bytes (Attributes)
@@ -1747,7 +1755,7 @@ _HEADER_LCD0                        00000000    00000003 =           3. bytes (A
 
       Value  Global                              Global Defined In Module
       -----  --------------------------------   ------------------------
-ASxxxx Linker V03.00/V05.40 + sdld,  page 56.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 57.
 
 Files Linked                              [ module(s) ]
 
@@ -1999,13 +2007,13 @@ lib/hUGEDriver.lib                        [ hUGEDriver.o ]
 /var/folders/zv/5bjbzvfj0lg_1cwfjnzwtp2m0000gn/T/_gbstools/gbdk/lib/gb/gb.lib
                                           [ set_bk_t.o ]
 
-ASxxxx Linker V03.00/V05.40 + sdld,  page 57.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 58.
 
 User Base Address Definitions
 
 _DATA=0xC0A0
 _CODE=0x0200
-ASxxxx Linker V03.00/V05.40 + sdld,  page 58.
+ASxxxx Linker V03.00/V05.40 + sdld,  page 59.
 
 User Global Definitions
 
